@@ -12,8 +12,6 @@ int _printf(const char *format, ...)
 	int *ptr = &a;
 	va_list args;
 
-	if (!format)
-		return (0);
 	va_start(args, format);
 	while (format[index_format])
 	{
