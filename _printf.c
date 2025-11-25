@@ -16,9 +16,14 @@ int _printf(const char *format, ...)
 	while (format[index_format])
 	{
 		if (format[index_format] == '%')
+		{
 			len += conversion(format[index_format + 1], args, ptr);
+		}
 		else
+		{
 			_putchar(format[index_format]);
+			len++;
+		}
 		index_format += 1 + a;
 		a = 0;
 	}
