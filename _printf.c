@@ -17,7 +17,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[index_format] == '%')
 		{
-			len += conversion(format[index_format + 1], args, ptr);
+			if (format[index_format + 1] != '\0')
+				len += conversion(format[index_format + 1], args, ptr);
+			else
+				return (-1);
 		}
 		else
 		{
