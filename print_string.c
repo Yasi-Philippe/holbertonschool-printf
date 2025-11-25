@@ -16,5 +16,5 @@ int print_string(va_list args)
 		ptr++;
 		len++;
 	}
-	return (len - 1);
+	return (len);
 }
