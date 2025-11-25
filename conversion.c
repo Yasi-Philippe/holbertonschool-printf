@@ -13,6 +13,8 @@ int conversion(char letter, va_list args, int *ptr)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
+		{'d', print_number},
+		{'i', print_number},
 		{'\0', NULL},
 	};
 
