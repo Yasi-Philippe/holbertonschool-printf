@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * print_nmbr - prints an integer number recursively
+ * @num: integer number to print
+ *
+ * Return: number of characters printed
+ */
 int print_nmbr(int num)
 {
 	int len = 0;
@@ -9,7 +14,12 @@ int print_nmbr(int num)
 	_putchar('0' + num % 10);
 	return (len + 1);
 }
-
+/**
+ * print_number - prints an integer number
+ * @args: list of arguments
+ *
+ * Return: number of characters printed
+ */
 int print_number(va_list args)
 {
 	int dec = va_arg(args, int);
