@@ -1,0 +1,51 @@
+# man _printf
+
+NAME
+	_printf - output in the form of characters
+
+SYNOPSIS
+       int _printf(, ...);
+
+DESCRIPTION
+       _printf() writes all the characters provided between double quotation marks. Moreover, it allows additional
+	   arguments to be converted and written at any desired position in the string of characters. To indicate the
+	   position, a specific conversion modifier must be present. The conversion modifiers supported by this function
+	   are the following:
+
+			  - %c	Will take a char type variable and print a character.
+              - %s	Will take a char * type variable and print all the characters until but without including
+			  		the null byte character.
+              - %d	Will take an int type variable and print it as a character(s).
+              - %i	Will take 
+			  - %%	Will just print a single percentage symbol.
+			  - %	If the follow up character is not included as a specific conversion modifier, the function will
+			  		normally print both the percentage symbol and the follow up character, unless it is the Null byte,
+					in which case it will result in an error.
+
+       _printf() writes anything that is passed into it as long as its supported.
+
+OPTIONS
+       -h|--help
+              Prints help
+
+EXAMPLES
+       _printf("Hello from the other side\n");
+
+              Hello from the other side
+
+       _printf("Hello %s the other side%c\n", "from", '!');
+
+              Hello from the other side!
+
+RETURN VALUE
+       _printf() will return an int with the value equal to the lenght of the characters printed.
+
+	   -1: Fatal error.
+
+STANDARDS
+       POSIX.1-2017.
+
+SEE ALSO
+       putchar(), printf(), write(), stdarg.h
+
+Manual page _printf(1)                             2025-11-26                                           _printf(1)
