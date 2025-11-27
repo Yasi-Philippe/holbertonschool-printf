@@ -16,3 +16,20 @@ flowchart TD
     J --> K[Adjusting the lenght printed.
     Switching to the next character in the input string, taking into account conversion modifiers.]
     K --> C
+
+    N[Important variables:
+    unsigned int len = 0; Stores the lenght of the characters printed.
+    int a = 0; Stores whether one or two characters have been printed after a conversion modifier has taen place
+    va_list args; A list of the arguments.
+    print_struct is a structure linking a keyword with function pointer.
+    print_struct specifiers is an array of structures that links each keyword with each printing function.]
+
+    O@{ shape: stadium, label: "Conversion printing function" } --> P{WHILE LOOP
+    will go keyword by keyword from the structure array}
+    P --> |While not end of the strcuture| Q{IF CONDITION
+    If the keyword matches with the actual letter from the input string}
+    Q --> |True| S[Call the corresponding printing function]
+    Q --> |False| T[Adjust to the next keyword in the tructure]
+    T --> P
+    P --> |End of the structure| U[Print a percent symbol]
+    U --> V@{ shape: stadium, label: "Return the lenght printed to the main function." }
