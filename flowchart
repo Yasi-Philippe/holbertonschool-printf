@@ -1,0 +1,18 @@
+flowchart TD
+    A@{ shape: stadium, label: "START
+    _printf()" } --> B[Declaration ofvariables.]
+    B --> C{WHILE LOOP
+    will go letter by letter from the input string.}
+    C -->|While not end of the string| D{IF CONDITION
+    If letter in string is '%'}
+    C -->|End of the string| M@{ shape: stadium, label: "Return: Integer equal to the lenght of characters printed.
+    SUCCESS" }
+    D --> |TRUE| F{IF CONDITION
+    If next character is not '\0'}
+    D --> |FALSE| G[Print letter.] --> K
+    F --> |TRUE| J@{ shape: subproc, label: "Conversion printing function" }
+    F --> |FALSE| L@{ shape: stadium, label: "ERROR
+    Return: -1" }
+    J --> K[Adjusting the lenght printed.
+    Switching to the next character in the input string, taking into account conversion modifiers.]
+    K --> C
