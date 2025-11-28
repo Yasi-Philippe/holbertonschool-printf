@@ -106,18 +106,3 @@ git clone https://github.com/Yasi-Philippe/holbertonschool-printf.git
 **Andric Assani**
 - GitHub: [@Andric-Assani](https://github.com/Handroc)
 - LinkedIn: [@Andric-Assani](https://www.linkedin.com/in/andric-assani)
-
-/
-
-
-
-
-
-
-
-
-
-
-
-
-
