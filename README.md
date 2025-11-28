@@ -117,6 +117,8 @@ flowchart TD
 | `print_hexa_capital.c`      | Prints a number in hexadecimal number with capital letters |
 | `main.h`      | Local library containing all the function prototypes |
 | `README.md`       | The README file you are currently reading 😉.     |
+| `man_3_printf`      | Manual file copy |
+| `_printf.1`      | Manual file to be installed |
 
 ## 💻 <span id="installation">Installation</span>
 
