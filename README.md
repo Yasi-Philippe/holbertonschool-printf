@@ -37,6 +37,14 @@ _printf() writes all the characters provided between double quotation marks. Mor
 - %d	Will take an int type variable and print it as a character(s).
               
 - %i	Will take an int type variable and print it as a character(s).
+
+- %u	Will take an unsigned int type variable and print it as character(s).
+
+- %o	Will take an unsigned int type variable and print it in octal base as character(s).
+
+- %x	Will take an unsigned int type variable and print it in hexadecimal base as character(s).
+
+- %X	Will take an unsigned int type variable and print it in hexadecimal base (with capital letters) as character(s).
 			  
 - %%	Will just print a single percentage symbol.
 			  
@@ -103,6 +111,10 @@ flowchart TD
 | `print_string.c`      | Prints a string of characters |
 | `print_number.c`      | Prints a number in base 10 |
 | `print_percent.c`      | Prints the % symbol |
+| `print_unsigned.c`      | Prints an unsigned number |
+| `print_octal.c`      | Prints a number in octal base |
+| `print_hexa.c`      | Prints a number in hexadecimal base |
+| `print_hexa_capital.c`      | Prints a number in hexadecimal number with capital letters |
 | `main.h`      | Local library containing all the function prototypes |
 | `README.md`       | The README file you are currently reading 😉.     |
 
@@ -129,14 +141,10 @@ sudo cp _printf.1 /usr/share/man/man1/
 
 - Add support for the following custom conversion specifiers:
     1. %b : converts a number to binary
-    2. %u : prints an unsigned integer
-    3. %o : converts a number to octal
-    3. %x : converts a number to hexadecimal
-    3. %X : converts a number to hexadecimal and displays it with capital letters
-  6. %S : prints a string of characters including non-printable characters displayed with their hexadecimal number
-  7. %p : prints the address of a variable
-  8. %r : prints a reversed string
-  9. %R : prints a string of characters in rot13
+  2. %S : prints a string of characters including non-printable characters displayed with their hexadecimal number
+  3. %p : prints the address of a variable
+  4. %r : prints a reversed string
+  5. %R : prints a string of characters in rot13
 
 - Add support for flag characters and lenght modifiers.
 - Handle support for the field width, precision, flag characters 0 and -
