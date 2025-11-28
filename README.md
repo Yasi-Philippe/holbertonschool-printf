@@ -8,6 +8,8 @@
   </summary>
   📄 <a href="#description">Description</a>
   <br>
+  📄 <a href="#flow-chart">Flow Chart</a>
+  <br>
   🔨 <a href="#tech-stack">Tech stack</a>
   <br>
   📂 <a href="#files-description">Files description</a>
@@ -44,6 +46,46 @@ _printf() writes all the characters provided between double quotation marks. Mor
 
 
  _printf() writes anything that is passed into it as long as its supported.
+## 📄 <span id="flow-chart">Flow Chart</span>
+
+
+```mermaid
+flowchart TD
+    A@{ shape: stadium, label: "START
+    _printf()" } --> B[Declaration ofvariables.]
+    B --> C{WHILE LOOP
+    will go letter by letter from the input string.}
+    C -->|While not end of the string| D{IF CONDITION
+    If letter in string is '%'}
+    C -->|End of the string| M@{ shape: stadium, label: "Return: Integer equal to the lenght of characters printed.
+    SUCCESS" }
+    D --> |TRUE| F{IF CONDITION
+    If next character is not '\0'}
+    D --> |FALSE| G[Print letter.] --> K
+    F --> |TRUE| J@{ shape: subproc, label: "Conversion printing function" }
+    F --> |FALSE| L@{ shape: stadium, label: "ERROR
+    Return: -1" }
+    J --> K[Adjusting the lenght printed.
+    Switching to the next character in the input string, taking into account conversion modifiers.]
+    K --> C
+
+    N[Important variables:
+    unsigned int len = 0; Stores the lenght of the characters printed.
+    int a = 0; Stores whether one or two characters have been printed after a conversion modifier has taen place
+    va_list args; A list of the arguments.
+    print_struct is a structure linking a keyword with function pointer.
+    print_struct specifiers is an array of structures that links each keyword with each printing function.]
+
+    O@{ shape: stadium, label: "Conversion printing function" } --> P{WHILE LOOP
+    will go keyword by keyword from the structure array}
+    P --> |While not end of the strcuture| Q{IF CONDITION
+    If the keyword matches with the actual letter from the input string}
+    Q --> |True| S[Call the corresponding printing function]
+    Q --> |False| T[Adjust to the next keyword in the tructure]
+    T --> P
+    P --> |End of the structure| U[Print a percent symbol]
+    U --> V@{ shape: stadium, label: "Return the lenght printed to the main function." }
+```
 ## 🔨 <span id="tech-stack">Tech stack</span>
 
 <p align="left">
@@ -76,6 +118,12 @@ git clone https://github.com/Yasi-Philippe/holbertonschool-printf.git
 ```
 
 2. Open the repository you've just cloned.
+
+3. In order to have access to the manual page copy the indicated file in the indicated adress with superuser powers:
+
+```bash
+sudo cp _printf.1 /usr/share/man/man1/
+```
 
 ## 🔧 <span id="whats-next">What's next?</span>
 
