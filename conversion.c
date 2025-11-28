@@ -15,6 +15,10 @@ int conversion(char letter, va_list args, int *ptr)
 		{'%', print_percent},
 		{'d', print_number},
 		{'i', print_number},
+		{'u', print_unsigned},
+		{'o', print_octal},
+		{'x', print_hexa},
+		{'X', print_hexa_capital},
 		{'\0', NULL},
 	};
 
