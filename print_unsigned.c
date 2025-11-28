@@ -7,12 +7,16 @@
  */
 int print_unsigned(va_list args)
 {
-	int dec = va_arg(args, int);
+	long int dec = va_arg(args, int);
 	int len = 1;
 	int digits = 1;
 
 	while (dec < 0)
-		dec += INT_MAX;
+	{
+		dec += (INT_MAX);
+		dec += (INT_MAX);
+		dec += 2;
+	}
 	while (dec / digits >= 10)
 	{
 		digits *= 10;
